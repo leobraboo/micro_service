@@ -10,6 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+//criação da table
 model Notification {
   id          String    @id
   recipientId String
@@ -18,5 +19,6 @@ model Notification {
   readAt      DateTime?
   createdAt   DateTime  @default(now())
 
+  // referencia para outro serviço recipientId
   @@index([recipientId])
 }
